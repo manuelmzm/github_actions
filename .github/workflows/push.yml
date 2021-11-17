@@ -45,7 +45,7 @@ jobs:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         KUBECTL_VERSION: "1.20"
       with:
-      args: |
+        args: |
         URL=`kubectl -n prueba get ngrok -o=custom-columns='DATA:status.url' | tail -n1` 
         echo "::set-output name=url::$URL"
    # - name: Check if URL is valid
